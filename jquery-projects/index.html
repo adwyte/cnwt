@@ -1,76 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Course Projects Viewer</title>
+  <title>Course Projects</title>
 
-  <!-- Geist Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
+  <div class="container">
 
-<div class="container">
+    <h1 class="title">Course Project Navigator</h1>
+    <p class="subtitle">View Systematic Course Project Details.</p>
 
-  <h1 class="title">Course Project Viewer</h1>
+    <!-- Buttons -->
+    <div class="button-row">
+      <button class="btn toggle-btn" data-section="ml">ML</button>
+      <button class="btn toggle-btn" data-section="cloud">Cloud</button>
+      <button class="btn toggle-btn" data-section="daa">DAA</button>
+      <button class="btn toggle-btn" data-section="cnt">CNT</button>
+      <button class="btn toggle-btn" data-section="edai">EDAI</button>
+    </div>
 
-  <!-- Buttons -->
-  <div class="button-row">
-    <button class="btn toggle-btn" data-section="ml">ML</button>
-    <button class="btn toggle-btn" data-section="cloud">Cloud</button>
-    <button class="btn toggle-btn" data-section="daa">DAA</button>
-    <button class="btn toggle-btn" data-section="cnt">CNT</button>
-    <button class="btn toggle-btn" data-section="edai">EDAI</button>
+    <!-- Display Card -->
+    <div id="content-card" class="card">
+      <p>Select a course above to view project details.</p>
+    </div>
+
+    <!-- Hidden Sections -->
+    <div id="ml" class="hidden">
+      <h2 class="section-title">Machine Learning Project</h2>
+      <p><strong>Objective:</strong> Predict outcomes using supervised ML models.</p>
+      <p><strong>Tech Stack:</strong> Python, Scikit-Learn, Pandas</p>
+    </div>
+
+    <div id="cloud" class="hidden">
+      <h2 class="section-title">Cloud Computing Project</h2>
+      <p><strong>Objective:</strong> Deploy scalable microservices on cloud.</p>
+      <p><strong>Tech Stack:</strong> Docker, Kubernetes, AWS</p>
+    </div>
+
+    <div id="daa" class="hidden">
+      <h2 class="section-title">Design & Analysis of Algorithms Project</h2>
+      <p><strong>Objective:</strong> Optimize computational problem efficiency.</p>
+      <p><strong>Tech Stack:</strong> C++, Python</p>
+    </div>
+
+    <div id="cnt" class="hidden">
+      <h2 class="section-title">Computer Networks Project</h2>
+      <p><strong>Objective:</strong> Build reliable socket communication.</p>
+      <p><strong>Tech Stack:</strong> Python, TCP/UDP</p>
+    </div>
+
+    <div id="edai" class="hidden">
+      <h2 class="section-title">EDAI Project</h2>
+      <p><strong>Objective:</strong> AI-driven educational assistance.</p>
+      <p><strong>Tech Stack:</strong> React, FastAPI, NLP Models</p>
+    </div>
+
   </div>
 
-  <!-- Card (content area) -->
-  <div id="content-card" class="card section">
-    <h2 class="section-title">Select a project above</h2>
-    <p class="placeholder">Project details will appear here.</p>
-  </div>
-
-  <!-- Hidden data sections (for jQuery to read) -->
-  <div id="ml" class="hidden section-data">
-    <h2>Machine Learning Project</h2>
-    <p><strong>Objective:</strong> Predict rainfall using ML models.</p>
-    <p><strong>Tech Stack:</strong> Python, Sklearn, Pandas.</p>
-  </div>
-
-  <div id="cloud" class="hidden section-data">
-    <h2>Cloud Project</h2>
-    <p><strong>Objective:</strong> Deploy microservices on cloud.</p>
-    <p><strong>Tech Stack:</strong> Docker, Kubernetes, AWS.</p>
-  </div>
-
-  <div id="daa" class="hidden section-data">
-    <h2>DAA Project</h2>
-    <p><strong>Objective:</strong> Implement Huffman coding + graph algorithms.</p>
-    <p><strong>Tech Stack:</strong> C++, Algorithms.</p>
-  </div>
-
-  <div id="cnt" class="hidden section-data">
-    <h2>CNT Project</h2>
-    <p><strong>Objective:</strong> Build network topologies.</p>
-    <p><strong>Tech Stack:</strong> Cisco Packet Tracer.</p>
-  </div>
-
-  <div id="edai" class="hidden section-data">
-    <h2>EDAI Project</h2>
-    <p><strong>Objective:</strong> Analyze real datasets using Python.</p>
-    <p><strong>Tech Stack:</strong> NumPy, Matplotlib.</p>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
