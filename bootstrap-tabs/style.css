@@ -4,7 +4,7 @@
   --card: oklch(100% 0 0);
   --border: oklch(85% 0 0);
 
-  --f1-red: oklch(57% 0.23 28); /* clean vivid red */
+  --f1-red: oklch(57% 0.23 28);
 }
 
 body {
