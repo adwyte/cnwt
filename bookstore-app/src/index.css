@@ -1,0 +1,132 @@
+
+/* Fix Tailwind Preflight Border Override        */
+
+*,
+*::before,
+*::after {
+  border-color: inherit;
+}
+
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* GLOBAL FONT                                   */
+
+@layer base {
+  html, body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --background: 99% 0 0;
+    --foreground: 10% 0 0;
+    --foreground-muted: 45% 0 0;
+
+    --card: 100% 0 0;
+    --hover: 97% 0 0;
+
+    --border: 0 0% 0% / 1;
+    --input-border: 0 0% 0% / 1;
+
+    --accent: 75% 0.13 200;
+  }
+
+  body {
+    background-color: oklch(var(--background));
+    color: oklch(var(--foreground));
+    letter-spacing: -0.2px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    color: oklch(var(--foreground-muted));
+  }
+
+  label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    display: block;
+  }
+}
+
+
+/* ERP COMPONENTS                                */
+
+@layer components {
+
+  /* CARD ------------------------ */
+  .card {
+    background: white;
+    border: 1.6px solid #000;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  /* INPUT ----------------------- */
+  input {
+    width: 100%;
+    background: white;
+    border: 1.2px solid #000;
+    border-radius: 10px;
+    padding: 0 12px;
+    height: 42px;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  input:focus {
+    background-color: oklch(var(--hover));
+    border-width: 1.4px;
+    outline: none;
+  }
+
+  /* BUTTON ---------------------- */
+  .btn {
+    background: white;
+    border: 1.4px solid #000;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.15s;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .btn:hover {
+    background-color: oklch(var(--hover));
+  }
+
+  /* NAVBAR ---------------------- */
+  .navbar {
+    width: 100%;
+    border-bottom: 1.8px solid #000;
+    background: white;
+    margin-bottom: 32px;
+    padding: 12px 0;
+  }
+}
