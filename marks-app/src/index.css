@@ -1,0 +1,99 @@
+/* Fix Tailwind Preflight Border Override */
+*,
+*::before,
+*::after {
+  border-color: inherit;
+}
+
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Font Override */
+html, body {
+  font-family: Inter, sans-serif;
+}
+
+/* UI */
+@layer base {
+  :root {
+    --background: 99% 0 0;
+    --foreground: 10% 0 0;
+    --foreground-muted: 45% 0 0;
+
+    --card: 100% 0 0;
+    --hover: 97% 0 0;
+
+    --border: 0 0% 0% / 1;
+    --input-border: 0 0% 0% / 1;
+
+    --accent: 75% 0.13 200;
+  }
+
+  body {
+    background-color: oklch(var(--background));
+    color: oklch(var(--foreground));
+    letter-spacing: -0.2px;
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    color: oklch(var(--foreground-muted));
+  }
+
+  /* Labels */
+  label {
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  /* Card */
+  .card {
+    background: white;
+    border: 1.6px solid #000;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 12px;
+  }
+
+  .card h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  /* Input */
+  input {
+    background: white;
+    border: 1.2px solid #000;
+    border-radius: 10px;
+    padding: 0 12px;
+    height: 42px;
+    font-size: 14px;
+    color: oklch(var(--foreground));
+  }
+
+  input:focus {
+    background-color: oklch(var(--hover));
+    border-width: 1.4px;
+    outline: none;
+  }
+
+  /* Placeholder */
+  input::placeholder {
+    color: #6f6f6f;
+    opacity: 1;
+  }
+
+  .text-muted {
+    color: oklch(var(--foreground-muted));
+  }
+}
